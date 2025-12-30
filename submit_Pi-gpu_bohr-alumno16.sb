@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#SBATCH -p bohr-gpu
+#SBATCH --chdir=/home/alumno16/lab-6
+#SBATCH -J Lab-gpu-avanzado
+
+
+module load anaconda/2025.06
+
+echo "Numero de simulaciones: $1"
+
+ipython pi-gpu-alumno16.ipynb $1
+
+module unload anaconda/2025.06
